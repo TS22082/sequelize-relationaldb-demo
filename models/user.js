@@ -2,17 +2,17 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     username: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   });
 
-  User.associate = models => {
+  User.associate = (models) => {
     User.hasMany(models.Post, {
-      onDelete: "cascade"
+      onDelete: "cascade",
     });
 
     User.hasOne(models.Profile, {
-      onDelete: "cascade"
+      onDelete: "cascade",
     });
   };
 

@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Profile = sequelize.define("Profile", {
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
   });
 
-  Profile.associate = models => {
+  Profile.associate = (models) => {
     Profile.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
   };
 
